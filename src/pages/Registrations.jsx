@@ -79,7 +79,7 @@ const Registrations = () => {
                 )
             }
             <div className="form-control mt-6">
-              <button className="btn btn-primary">Login</button>
+              <button className="btn btn-primary">Register</button>
             </div>
             <div className="mt-6">
               <GoogleLogin></GoogleLogin>
@@ -87,7 +87,7 @@ const Registrations = () => {
             <div className="mt-6">
               <p>
                 New Here?{"  "}
-                <Link to="/register" className="text-red-500">Register</Link>
+                <Link to="/login" className="text-red-500">Login</Link>
               </p>
             </div>
           </div>
