@@ -1,13 +1,20 @@
 import { Link } from "react-router-dom";
 import GoogleLogin from "../components/Login-Registration/GoogleLogin";
+import { useState } from "react";
 
-const Login = () => {
+const Registrations = () => {
+    const [passMatch, setPassMatch] = useState(true)
   const handleSubmit = (e) => {
     e.preventDefault()
     const form = e.target;
-    const email = form.value;
-    const password = form.value;
-    console.log(email, password)
+    const email = form.email.value;
+    const password = form.password.value;
+    const confirm_password = form.confirm_password.value;
+
+    if(password !==confirm_password){
+        setPassMatch(false)
+    }
+    console.log(email, password, confirm_password)
   }
   return (
     <form onSubmit={handleSubmit} className="hero min-h-screen bg-base-200">
@@ -45,12 +52,32 @@ const Login = () => {
                 name="password"
                 required
               />
+                         
               <label className="label">
                 <a href="#" className="label-text-alt link link-hover">
                   Forgot password?
                 </a>
               </label>
             </div>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Confirm Password</span>
+              </label>
+              <input
+                type="password"
+                placeholder="Confirm Password"
+                className="input input-bordered"
+                name="confirm_password"
+                required
+              />
+            </div>
+            {
+                !passMatch && (
+                    <div className="my-2">
+                        <p className="text-red-500">Password doesn't match!</p>
+                    </div>
+                )
+            }
             <div className="form-control mt-6">
               <button className="btn btn-primary">Login</button>
             </div>
@@ -70,4 +97,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Registrations;
