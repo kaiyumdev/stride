@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 
 const Navbar = () => {
-  const {logOut} = useAuth()
+  const {logOut, user} = useAuth()
   return (
     <div className="navbar bg-base-100">
       <div className="navbar-start">
@@ -33,15 +33,22 @@ const Navbar = () => {
             <li>
               <Link to={"/about"}>About</Link>
             </li>
-            <li>
-              <Link to={"/login"}>Login</Link>
-            </li>
-            <li>
-              <Link to={"/dashboard"}>Dashboard</Link>
-            </li>
-            <li>
-              <button onClick={() =>logOut()} className="btn bg-red-500 text-white">Logout</button>
-            </li>
+            {
+              user ? (
+                <>
+                <li>
+                <Link to={"/dashboard"}>Dashboard</Link>
+              </li>
+              <li>
+                <button onClick={() =>logOut()} className="btn bg-red-500 text-white">Logout</button>
+              </li>
+                </>
+              ): (
+                <li>
+                <Link to={"/login"}>Login</Link>
+              </li>
+              )
+            }
           </ul>
         </div>
         <a className="btn btn-ghost text-xl">daisyUI</a>
@@ -54,15 +61,22 @@ const Navbar = () => {
           <li>
             <Link to={"/about"}>About</Link>
           </li>
-          <li>
-            <Link to={"/login"}>Login</Link>
-          </li>
-          <li>
-            <Link to={"/dashboard"}>Dashboard</Link>
-          </li>
-          <li>
-              <button onClick={() =>logOut()} className="btn bg-red-500 text-white">Logout</button>
-            </li>
+          {
+              user ? (
+                <>
+                <li>
+                <Link to={"/dashboard"}>Dashboard</Link>
+              </li>
+              <li>
+                <button onClick={() =>logOut()} className="btn bg-red-500 text-white">Logout</button>
+              </li>
+                </>
+              ): (
+                <li>
+                <Link to={"/login"}>Login</Link>
+              </li>
+              )
+            }
         </ul>
       </div>
       <div className="navbar-end">
