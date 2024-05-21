@@ -3,7 +3,7 @@ import { FaGoogle } from "react-icons/fa";
 import useAuth from '../../hooks/useAuth';
 
 const GoogleLogin = () => {
-  const {googleLogin} = useAuth;
+  const {googleLogin} = useAuth();
   const handleGoogleSingIn = () => {
     googleLogin()
   }
