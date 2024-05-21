@@ -13,7 +13,7 @@ const AuthProvider = ({children}) => {
   }
   const authInfo = {googleLogin}
   return (
-    <AuthContext value={googleLogin}>{children}</AuthContext>
+    <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
   )
 }
 
