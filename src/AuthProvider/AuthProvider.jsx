@@ -8,6 +8,7 @@ const auth = getAuth(app);
 
 const AuthProvider = ({children}) => {
   const [user, setUser] = useState(null)
+  console.log(user)
   const googleProvider = new GoogleAuthProvider();
 
   const googleLogin = () => {
@@ -18,7 +19,7 @@ const AuthProvider = ({children}) => {
     return createUserWithEmailAndPassword(auth, email, password)
   }
 
-  const signIn = () => {
+  const signIn = (email, password) => {
     return signInWithEmailAndPassword(auth, email, password)
   }
 

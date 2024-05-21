@@ -1,13 +1,18 @@
 import { Link } from "react-router-dom";
 import GoogleLogin from "../components/Login-Registration/GoogleLogin";
+import useAuth from "../hooks/useAuth";
 
 const Login = () => {
+  const { signIn } = useAuth()
+
   const handleSubmit = (e) => {
     e.preventDefault()
+    
     const form = e.target;
-    const email = form.value;
-    const password = form.value;
+    const email = form.email.value;
+    const password = form.password.value;
     console.log(email, password)
+    signIn(email, password)
   }
   return (
     <form onSubmit={handleSubmit} className="hero min-h-screen bg-base-200">
@@ -27,11 +32,11 @@ const Login = () => {
                 <span className="label-text">Email</span>
               </label>
               <input
-                type="email"
-                placeholder="email"
-                className="input input-bordered"
-                name="email"
-                required
+               type="email"
+               placeholder="email"
+               className="input input-bordered"
+               name="email"
+               required
               />
             </div>
             <div className="form-control">
