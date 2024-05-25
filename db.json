@@ -1,0 +1,53 @@
+{
+    "shoes": [
+        {
+            "id": "1",
+            "title": "Air Max 90",
+            "brand": "Nike",
+            "price": 120.00,
+            "description": "Classic running shoes with a comfortable fit and stylish design.",
+            "image_url": "https://th.bing.com/th/id/R.41599bb567928263b62cd76b42139812?rik=YJymT7v07N97QQ&pid=ImgRaw&r=0"
+        },
+        {
+            "id": "2",
+            "title": "Ultraboost 21",
+            "brand": "Adidas",
+            "price": 180.00,
+            "description": "High-performance running shoes with responsive cushioning and energy return.",
+            "image_url": "https://th.bing.com/th/id/R.c2dca0d958debdf0d9dcaf9230fb311c?rik=Eft%2bjkbh09XPHQ&pid=ImgRaw&r=0"
+        },
+        {
+            "id": "3",
+            "title": "Gel-Kayano 27",
+            "brand": "ASICS",
+            "price": 160.00,
+            "description": "Stability running shoes designed for overpronators, providing support and comfort.",
+            "image_url": "https://i5.walmartimages.com/asr/4a5e028f-1b6c-49a8-b46f-fb751b6e4106_1.27bffd77b09c8192810881601f590027.jpeg"
+        },
+        {
+            "id": "4",
+            "title": "Classic Leather",
+            "brand": "Reebok",
+            "price": 75.00,
+            "description": "Timeless design with a soft leather upper and lightweight cushioning.",
+            "image_url": "https://th.bing.com/th/id/OIP.t0RpSLHYETlBNQklUXnsqAHaDt?rs=1&pid=ImgDetMain"
+        },
+        {
+            "id": "5",
+            "title": "Chuck Taylor All Star",
+            "brand": "Converse",
+            "price": 55.00,
+            "description": "Iconic high-top sneakers with a durable canvas upper and rubber sole.",
+            "image_url": "https://th.bing.com/th/id/R.a623dae1bdd774b2800557c411f66c66?rik=tdPX7oUUC7QiuA&riu=http%3a%2f%2fi3.stycdn.net%2fimages%2f2013%2f01%2f03%2farticle%2fconverse%2fso4249905%2fconverse-all-star-hi-schuhe-lila-150-zoom-0.jpg&ehk=sQF6yukq86npPqfa%2fsGK2XjhPNWKwJdpOic7b97hR08%3d&risl=&pid=ImgRaw&r=0"
+        },
+        {
+            "id": "6",
+            "title": "Speedcross 5",
+            "brand": "Salomon",
+            "price": 130.00,
+            "description": "Trail running shoes with aggressive grip, precise foothold, and protection.",
+            "image_url": "https://th.bing.com/th/id/OIP.3hoTGK1F38TcGp1r5uSDoQHaFE?rs=1&pid=ImgDetMain"
+        }
+    ]
+    
+}
