@@ -8,6 +8,7 @@ import DashboardLayout from "../layouts/DashboardLayout";
 import Dashboard from "../pages/Dashboard";
 import Registrations from "../pages/Registrations";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
+import ProductDetails from "../components/home/ProductDetails";
 
 export const router = createBrowserRouter([
   {
@@ -19,6 +20,11 @@ export const router = createBrowserRouter([
         path: "/",
         element: <Home />,
         loader: () => fetch("http://localhost:3000/shoes")
+      },
+      {
+        path: "/products/:id",
+        element: <ProductDetails></ProductDetails>,
+        loader: ({params}) => fetch(`http://localhost:3000/shoes/${params.id}`)
       },
       {
         path: "/about",
