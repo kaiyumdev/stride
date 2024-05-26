@@ -1,11 +1,23 @@
 import React from 'react'
 
 const AddProduct = () => {
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        const form = e.target;
+        const id = form.id.value;
+        const title = form.title.value;
+        const brand = form.brand.value;
+        const price = form.price.value;
+        const description =  form.description.value;
+        const image_url = form.image_url.value;
+        const data = {id, title, brand, price, description, image_url}
+        console.log(data)
+    }
   return (
     <div>
         <h1 className='text-5xl font-bold text-center'>Add Product</h1>
         <div className='my-16'>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <div className='mt-2'>
                     <input className='bg-gray-100 p-4 w-full border border-black rounded-lg ' type="text" name="title" id="" placeholder='title'/>
                 </div>
