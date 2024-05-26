@@ -1,7 +1,7 @@
 import React from 'react'
 
 const AddProduct = () => {
-    const handleSubmit = (e) => {
+    const handleSubmit = async(e) => {
         e.preventDefault()
         const form = e.target;
         const id = form.id.value;
@@ -11,7 +11,12 @@ const AddProduct = () => {
         const description =  form.description.value;
         const image_url = form.image_url.value;
         const data = {id, title, brand, price, description, image_url}
-        console.log(data)
+
+        await fetch("http://localhost:3000/shoes", {
+            method: "POST",
+            headers:{ "Content-type": "application/json"},
+            body: JSON.stringify(data)
+        }).then((res) => res.json()).then((data) => console.log(data))
     }
   return (
     <div>
