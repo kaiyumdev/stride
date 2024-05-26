@@ -12,7 +12,7 @@ const DashboardLayout = () => {
             <Link to={"/dashboard/allProducts"}>All Products</Link>
           </li>
           <li className="border border-black p-4 text w-full">
-            <Link to={"add-products"}>Add Product</Link>
+            <Link to={"/dashboard/addProduct"}>Add Product</Link>
           </li>
           <li className="border border-black p-4 text w-full">
             <Link to={"/"}>Home</Link>
