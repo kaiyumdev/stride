@@ -29,7 +29,7 @@ const SingleProduct = ({product, onDelete}) => {
             <Link to={`/products/${id}`}>See Details</Link>
           </button>
           <button className="btn bg-green-600 text-white">
-            <Link to={`/products/${id}`}>Edit</Link>
+            <Link to={`/dashboard/allProducts/edit/${id}`}>Edit</Link>
           </button>
           <button onClick={handleDelete} className="btn bg-red-500 text-white">
            Delete

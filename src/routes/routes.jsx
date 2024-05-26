@@ -11,6 +11,7 @@ import PrivateRoute from "./PrivateRoute/PrivateRoute";
 import ProductDetails from "../components/home/ProductDetails";
 import AllProducts from "../pages/AllProducts";
 import AddProduct from "../pages/AddProduct";
+import EditProduct from "../pages/EditProduct";
 
 export const router = createBrowserRouter([
   {
@@ -55,7 +56,11 @@ export const router = createBrowserRouter([
      },
      { path: "/dashboard/addProduct",
      element: <PrivateRoute><AddProduct></AddProduct></PrivateRoute> 
-    }
+    },
+    { path: "/dashboard/allProducts/edit/:id",
+    element: <PrivateRoute><EditProduct></EditProduct></PrivateRoute>,
+    loader: ({params}) => fetch(`http://localhost:3000/shoes/${params.id}`)
+   }
     ],
   },
 ]);
