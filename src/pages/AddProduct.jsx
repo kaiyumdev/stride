@@ -1,8 +1,11 @@
 import React from 'react'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const AddProduct = () => {
     const handleSubmit = async(e) => {
         e.preventDefault()
+        alert("Are you want to add product")
         const form = e.target;
         const id = form.id.value;
         const title = form.title.value;
@@ -16,7 +19,10 @@ const AddProduct = () => {
             method: "POST",
             headers:{ "Content-type": "application/json"},
             body: JSON.stringify(data)
-        }).then((res) => res.json()).then((data) => console.log(data))
+        }).then((res) => res.json()).then((data) => {
+            console.log(data)
+            toast("Add Product Successfully!");
+        })
     }
   return (
     <div>
@@ -44,6 +50,7 @@ const AddProduct = () => {
                 <div className='mt-2 flex justify-center items-center'>
                     <input className='btn mt-4 w-full'  type="submit" value="Add product" />
                 </div>
+                <ToastContainer />
             </form>
         </div>
     </div>

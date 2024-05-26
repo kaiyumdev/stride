@@ -4,6 +4,7 @@ const SingleProduct = ({product, onDelete}) => {
   const {id, title, brand, price, description, image_url} = product
 
   const handleDelete = async() => {
+    alert("Ary you want to delete this?")
     await fetch(`http://localhost:3000/shoes/${id}`, {
       method:"DELETE"
     }).then((res) => res.json()).then((data) => {

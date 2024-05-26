@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { useLoaderData } from 'react-router-dom'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const EditProduct = () => {
     const shoe = useLoaderData()
@@ -12,6 +14,7 @@ const EditProduct = () => {
     const [image_url, setImageUrl] = useState(shoe.image_url)
     const handleSubmit = async(e) => {
         e.preventDefault()
+        alert("Are you want to Edit shoe")
         const form = e.target;
         const id = form.id.value;
         const title = form.title.value;
@@ -24,7 +27,10 @@ const EditProduct = () => {
             method: "PATCH",
             headers: {"Content-type": "application/json"},
             body: JSON.stringify(data)
-        }).then((res) => res.json()).then((data) => console.log(data))
+        }).then((res) => res.json()).then((data) => {
+            console.log(data)
+            toast("Edit shoes successfully!");
+        })
     }
   return (
     <div>
@@ -52,6 +58,7 @@ const EditProduct = () => {
                 <div className='mt-2 flex justify-center items-center'>
                     <input className='btn mt-4 w-full'  type="submit" value="Edit product" />
                 </div>
+                <ToastContainer />
             </form>
         </div>
     </div>
