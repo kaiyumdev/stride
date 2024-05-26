@@ -8,10 +8,14 @@ const AllProducts = () => {
         .then((res) => res.json())
         .then((data) => setProducts(data))
     },[])
+
+    const handleDeleteProduct = (id) => {
+        setProducts(products.filter((product) => product.id !==id))
+    }
   return (
     <div className='flex justify-center gap-16 flex-wrap'>
         {
-            products?.map((product) => <SingleProduct key={product.id} product={product}></SingleProduct>)
+            products?.map((product) => <SingleProduct key={product.id} product={product} onDelete={handleDeleteProduct}></SingleProduct>)
         }
     </div>
   )

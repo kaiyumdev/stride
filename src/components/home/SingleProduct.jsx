@@ -1,12 +1,15 @@
 import { Link } from "react-router-dom";
 
-const SingleProduct = ({product}) => {
+const SingleProduct = ({product, onDelete}) => {
   const {id, title, brand, price, description, image_url} = product
 
   const handleDelete = async() => {
     await fetch(`http://localhost:3000/shoes/${id}`, {
       method:"DELETE"
-    }).then((res) => res.json()).then((data) => console.log(data))
+    }).then((res) => res.json()).then((data) => {
+      console.log(data)
+      onDelete(id)
+    })
   }
   return (
     <div className="card w-96 bg-base-100 shadow-xl p-5">

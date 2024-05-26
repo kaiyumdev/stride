@@ -1,14 +1,6 @@
 {
   "shoes": [
     {
-      "id": "1",
-      "title": "Air Max 90",
-      "brand": "Nike",
-      "price": 120,
-      "description": "Classic running shoes with a comfortable fit and stylish design.",
-      "image_url": "https://th.bing.com/th/id/R.41599bb567928263b62cd76b42139812?rik=YJymT7v07N97QQ&pid=ImgRaw&r=0"
-    },
-    {
       "id": "2",
       "title": "Ultraboost 21",
       "brand": "Adidas",
