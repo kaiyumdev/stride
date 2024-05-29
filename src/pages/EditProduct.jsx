@@ -12,6 +12,7 @@ const EditProduct = () => {
     const [brand, setBrand] = useState(shoe.brand)
     const [description, setDescription] = useState(shoe.description)
     const [image_url, setImageUrl] = useState(shoe.image_url)
+    
     const handleSubmit = async(e) => {
         e.preventDefault()
         alert("Are you want to Edit shoe")

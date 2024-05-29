@@ -49,7 +49,8 @@ export const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       { path: "",
-       element: <PrivateRoute><Dashboard /></PrivateRoute> 
+       element: <PrivateRoute><Dashboard /></PrivateRoute>,
+       loader: () => fetch("http://localhost:3000/shoes")
       },
       { path: "/dashboard/allProducts",
       element: <PrivateRoute><AllProducts></AllProducts></PrivateRoute> 
