@@ -6,7 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 const AllProducts = () => {
     const [products, setProducts] = useState();
     useEffect(() => {
-        fetch("http://localhost:3000/shoes")
+        fetch("http://localhost:5000/shoes")
         .then((res) => res.json())
         .then((data) => setProducts(data))
     },[])
@@ -21,7 +21,7 @@ const AllProducts = () => {
         <ToastContainer />
         </div>
         {
-            products?.map((product) => <SingleProduct key={product.id} product={product} onDelete={handleDeleteProduct}></SingleProduct>)
+            products?.map((product) => <SingleProduct key={product._id} product={product} onDelete={handleDeleteProduct}></SingleProduct>)
         }
         <div>
        

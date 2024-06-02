@@ -3,6 +3,7 @@ import { useLoaderData } from 'react-router-dom'
 
 const ProductDetails = () => {
     const shoe = useLoaderData();
+    console.log(shoe)
     const {title, brand, price, description, image_url} = shoe;
   return (
     <div className=' flex justify-center'>

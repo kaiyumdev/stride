@@ -1,15 +1,15 @@
 import { Link } from "react-router-dom";
 
 const SingleProduct = ({product, onDelete}) => {
-  const {id, title, brand, price, description, image_url} = product
+  const {_id, title, brand, price, description, image_url} = product
 
   const handleDelete = async() => {
     alert("Ary you want to delete this?")
-    await fetch(`http://localhost:3000/shoes/${id}`, {
+    await fetch(`http://localhost:5000/shoes/${_id}`, {
       method:"DELETE"
     }).then((res) => res.json()).then((data) => {
       console.log(data)
-      onDelete(id)
+      onDelete(_id)
     })
   }
   return (
@@ -27,10 +27,10 @@ const SingleProduct = ({product, onDelete}) => {
         <p>{description}</p>
         <div className="card-actions justify-end">
           <button className="btn bg-indigo-500 text-white">
-            <Link to={`/products/${id}`}>See Details</Link>
+            <Link to={`/products/${_id}`}>See Details</Link>
           </button>
           <button className="btn bg-green-600 text-white">
-            <Link to={`/dashboard/allProducts/edit/${id}`}>Edit</Link>
+            <Link to={`/dashboard/allProducts/edit/${_id}`}>Edit</Link>
           </button>
           <button onClick={handleDelete} className="btn bg-red-500 text-white">
            Delete

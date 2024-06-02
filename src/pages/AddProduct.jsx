@@ -7,21 +7,21 @@ const AddProduct = () => {
         e.preventDefault()
         alert("Are you want to add product")
         const form = e.target;
-        const id = form.id.value;
         const title = form.title.value;
         const brand = form.brand.value;
         const price = form.price.value;
         const description =  form.description.value;
         const image_url = form.image_url.value;
-        const data = {id, title, brand, price, description, image_url}
+        const data = {title, brand, price, description, image_url}
 
-        await fetch("http://localhost:3000/shoes", {
+        await fetch("http://localhost:5000/shoes", {
             method: "POST",
             headers:{ "Content-type": "application/json"},
             body: JSON.stringify(data)
         }).then((res) => res.json()).then((data) => {
             console.log(data)
             toast("Add Product Successfully!");
+            form.reset()
         })
     }
   return (
@@ -43,9 +43,6 @@ const AddProduct = () => {
                 </div>
                 <div className='mt-2'>
                     <input className='bg-gray-100 p-4 w-full border border-black rounded-lg ' type="text" name="image_url" id="" placeholder='image_url'/>
-                </div>
-                <div className='mt-2'>
-                    <input className='bg-gray-100 p-4 w-full border border-black rounded-lg ' type="text" name="id" id="" placeholder='id'/>
                 </div>
                 <div className='mt-2 flex justify-center items-center'>
                     <input className='btn mt-4 w-full'  type="submit" value="Add product" />
