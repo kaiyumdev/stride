@@ -10,7 +10,7 @@ const Dashboard = () => {
 
         <div className="flex gap-16 justify-center space-x-4 flex-wrap">
            {
-            data.map((product) => <SingleProduct key={product.id} product={product}></SingleProduct>)
+            data.map((product) => <SingleProduct key={product._id} product={product}></SingleProduct>)
            }
         </div>
         
